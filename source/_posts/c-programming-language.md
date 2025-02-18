@@ -150,10 +150,67 @@ float eps = 1.0e-5;
 
 ## 3.1 Arithmetic operators
 
+&emsp;&emsp;The binary arithmetic operators are `+`, `-`, `*`, `/`, and the modulus operator `%`.
+
+Integer division truncates any fractional part.
+
+> The direction of truncation for `/` and the sign of the result for `%` are machine-dependent for negative operands, as is the action taken on overflow or underflow.
+
+The expression
+
+```c
+x % y
+```
+
+produces the remainder when `x` is divided by `y`, and thus is zero when `y` divides `x` exactly. 
+
+For example, a year is a leap year if it is divisible by 4 but not by 100,except that years divisible by 400 are leap years. Therefore
+
+```c
+if ((year % 4 == 0 && year % 100 !=0) || year % 400 == 0)
+    printf("%d is a leap year\n", year);
+else
+    printf("%d is not a leap year\n", year);
+```
+
+The `%` operator *can not be applied to `float` and `double`*.
+
+The binary `+` and `-` operators have the same precedence, which is lower than the precedence of `*`, `/`, and `%`, which is in turn lower than unary `+` and `-`.
+
+Arithmetic operators associate left to right.
+
+## 3.2 Relational and logical operators
+
+&emsp;&emsp;The relational operators are `>`, `>=`, `<` and `<=`.
+
+They all have the same precedence. Just below them in precedence are the equality operators: `==` and `!=`.
+
+Relational operators have lower precedence than arithmetic operators, so an expression like `i < lim-1` is taken as `i <(lim-1)`, as would be expected.
+
+&emsp;&emsp;There are 3 relational operators: `&&`, `||` and `!`.
+
+Expressions connected by `&&` or `||` are evaluated left to right, and *evaluation stops as soon as the truthfalsehood of the result is known*. Most C programs rely on these properties.
+
+The precedence of `&&` is higher than that of `||`, and both are lower than relational and equality operators.
+
+
+----
+
+
+
+
+
+
+
+
+
+
+
 &emsp;&emsp;The C arithmetic operators are the symbols that are used to perform mathematical operations on operands. 
 
 There are **a total of 9 arithmetic operators** in C to provide the basic arithmetic operations such as addition, subtraction, multiplication, etc.
 
+<!--
 | Operator |                               Arithmetic Operation                               |     Syntax     |
 | :------: | :------------------------------------------------------------------------------: | :------------: |
 |   `+`    |                                Add two operands.                                 |    `x + y`     |
@@ -165,6 +222,7 @@ There are **a total of 9 arithmetic operators** in C to provide the basic arithm
 |   `++`   |               Increases the integer value of the variable by one.                | `++h` or `h++` |
 |   `+`    |                        Returns the value of its operand.                         |      `+h`      |
 |   `-`    |                Returns the negative of the value of its operand.                 |      `-h`      |
+-->
 
 ```c
 // C program to demonstrate syntax of arithmetic operators
@@ -226,15 +284,15 @@ int main()
 
 &emsp;&emsp;Assignment operators are used for assigning value to a variable.
 
-The left side operand of the assignment operator is a variable and right side operand of the assignment operator is a value. 
-
-The value on the right side must be **of the same data-type** of the variable on the left side otherwise the compiler will raise an error. 
-
 * `=` is the simplest assignment operator, which is used to assign the value on the right to the variable on the left.
 * `+=` is combination of `+` and `=` operators and `(a += b)` can be written as `(a = a + b)`.
 * `-=` is combination of `-` and `=` operators and `(a -= b)` can be written as `(a = a - b)`.
 * `*=` is combination of `*` and `=` operators and `(a *= b)` can be written as `(a = a * b)`.
 * `/=` is combination of `/` and `=` operators and `(a /= b)` can be written as `(a = a / b)`.
+
+The left side operand of the assignment operator is a variable and right side operand of the assignment operator is a value. 
+
+The value on the right side must be **of the same data-type** of the variable on the left side otherwise the compiler will raise an error. 
 
 ```c
 // C program to demonstrate working of Assignment operators
@@ -243,6 +301,9 @@ The value on the right side must be **of the same data-type** of the variable on
 
 int main()
 {
+
+
+* `=` is the simplest assignment operator, which is used to assign the value on the right to the variable on the left.
     // Assigning value 10 to a
     // using "=" operator
     int a = 10;
@@ -271,4 +332,18 @@ int main()
     return 0;
 }
 ```
+
+## 3.3 Relational operators
+
+&emsp;&emsp;Relational operators are the symbols that are used for comparison between two values to understand the type of relationship a pair of numbers shares.
+
+There are 6 relational operators in C:
+
+<img src="/images/c-relational-operators.png">
+
+## 3.4 Logical operators
+
+## 3.5 Bitwise operators
+
+
 
