@@ -99,7 +99,7 @@ float f = 12.34f;
 long double ld = 12.34L;
 ```
 
-&emsp;&emsp;A character constant is an integer, written as one character within single quotes, such as `'x'`. The value of a character constant is the numeric value of the character in the machine's character set.
+&emsp;&emsp;A character constant is an integer, **written as one character within single quotes**, such as `'x'`. The value of a character constant is the numeric value of the character in the machine's character set.
 
 ```c
 char c = 'x';
